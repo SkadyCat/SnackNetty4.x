@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>发送消息：</div>
+<input type="text" id="msgContent">
+<input type="button" value="点我发送" onclick="sendMsg()">
+
+<div>接收消息:</div>
+<div id="receiveMsg" style="background: #82f7ff"></div>
+
+<script type="application/javascript">
+
+    var socket = new WebSocket("ws://127.0.0.1:9001/ws");
+    socket.onopen = function () {
+        console.log("连接开始了")
+    };
+    socket.onclose = function () {
+        console.log("连接close")
+    };
+    socket.onerror = function () {
+        console.log("error")
+    };
+    socket.onmessage = function (message) {
+        let msgDiv = document.getElementById("receiveMsg");
+        console.log("接收到的消息：" + message);
+        let history = msgDiv.innerHTML;
+        msgDiv.innerHTML = history + "<br>" + message.data;
+    };
+
+    //发送消息给服务器
+    function sendMsg() {
+        let msg = document.getElementById("msgContent");
+        console.log("发送给服务器的信息是：" + msg.value);
+        socket.send(msg.value)
+    }
+</script>
+</body>
+</html>
