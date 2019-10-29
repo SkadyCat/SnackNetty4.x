@@ -9,6 +9,8 @@ import java.util.Random;
 public class GlutonSnack {
 
     public static final Random random = new Random();
+
+
     public WebSocketServerHandler handler;
 
     Vector3 dir;
@@ -36,11 +38,34 @@ public class GlutonSnack {
 
     public  void  updateDir(JSONObject posObj) {
 
-        dir.x = new Float(posObj.get("x").toString());
-        dir.y = new Float(posObj.get("y").toString());
+
+        if (position.x>28||position.x<-28){
+
+            float tdir =(position.x/Math.abs(position.x));
+            int x = (int)(position.x);
+            position.x = tdir*x;
+            dir.x = 0;
+
+        }else {
+            dir.x = new Float(posObj.get("x").toString());
+
+        }
+        if (position.y>28||position.y<-28){
+
+            dir.y = 0;
+            float tdir =(position.y/Math.abs(position.y));
+            int y = (int)(position.y);
+            position.y = tdir*y;
+        }else {
+            dir.y = new Float(posObj.get("y").toString());
+
+        }
+//        dir.y = new Float(posObj.get("y").toString());
         dir.z = new Float(posObj.get("z").toString());
 
         bodyMessage = posObj.get("bodyMsg").toString();
+
+       // System.out.println(dir.toJsonValue());
 
 
     }
