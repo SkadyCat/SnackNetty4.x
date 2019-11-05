@@ -37,37 +37,24 @@ public class GlutonSnack {
     }
 
     public  void  updateDir(JSONObject posObj) {
-
-
         if (position.x>28||position.x<-28){
-
             float tdir =(position.x/Math.abs(position.x));
-            int x = (int)(position.x);
+            int x = (int)(Math.abs(position.x) - 1);
             position.x = tdir*x;
             dir.x = 0;
-
         }else {
             dir.x = new Float(posObj.get("x").toString());
-
         }
         if (position.y>28||position.y<-28){
-
             dir.y = 0;
             float tdir =(position.y/Math.abs(position.y));
-            int y = (int)(position.y);
+            int y =  (int)(Math.abs(position.y) - 1);
             position.y = tdir*y;
         }else {
             dir.y = new Float(posObj.get("y").toString());
-
         }
-//        dir.y = new Float(posObj.get("y").toString());
         dir.z = new Float(posObj.get("z").toString());
-
         bodyMessage = posObj.get("bodyMsg").toString();
-
-       // System.out.println(dir.toJsonValue());
-
-
     }
     public void updatePosition(){
 

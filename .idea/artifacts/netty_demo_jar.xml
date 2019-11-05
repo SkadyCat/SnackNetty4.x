@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="netty_demo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/netty_demo_jar</output-path>
+    <root id="archive" name="netty_demo.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="netty_demo" />
+      <element id="extracted-dir" path="D:/Maven/ck/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/commons-lang/commons-lang/2.5/commons-lang-2.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/io/netty/netty-all/4.1.0.Final/netty-all-4.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/org/jboss/marshalling/jboss-marshalling-serial/1.3.18.GA/jboss-marshalling-serial-1.3.18.GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/Maven/ck/org/jboss/marshalling/jboss-marshalling/1.3.19.GA/jboss-marshalling-1.3.19.GA.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
